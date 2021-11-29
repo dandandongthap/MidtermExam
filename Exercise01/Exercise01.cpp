@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 struct Node
 {
 	int key;
@@ -39,7 +37,7 @@ int main()
 	List L{ nullptr,nullptr };
 	int n;
 
-	cin >> n;
+	std::cin >> n;
 	createList(L, n);
 
 	reorderList(L, n);
@@ -96,7 +94,7 @@ void printList(List& L)
 
 	while (current)
 	{
-		cout << current->key << " ";
+		std::cout << current->key << " ";
 		current = current->pNext;
 	}
 }
@@ -156,7 +154,7 @@ void createList(List& L, int n)
 
 	for (int i = 0; i < n; i++)
 	{
-		cin >> input;
+		std::cin >> input;
 		appendNode(L, input);
 	}
 }
