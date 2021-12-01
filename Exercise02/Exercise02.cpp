@@ -51,6 +51,7 @@ int countCouples(const std::vector<int>& a, const std::vector<int>& b, int n)
 		else
 		{
 			int index = findPositiveSum(c, i + 1, n - 1, c.at(i));
+
 			if (index != -1)
 			{
 				count += n - index;
@@ -119,11 +120,11 @@ void heapify(std::vector<int>& vec, int num, int index)
 
 int findPositiveSum(const std::vector<int>& vec, int left, int right, int data)
 {
-	int mid = left + (right - left) / 2;
-
-	if (right < left && vec.at(mid) + data > 0) return left;
+	if (left < vec.size() && right < left) return left;
 
 	if (right < left) return -1;
+
+	int mid = left + (right - left) / 2;
 
 	if (vec.at(mid) + data > 0) return findPositiveSum(vec, left, mid - 1, data);
 
