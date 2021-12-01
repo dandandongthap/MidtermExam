@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-int countCouples(const std::vector<int>& a, const std::vector<int>& b, int n);
+long long countCouples(const std::vector<int>& a, const std::vector<int>& b, int n);
 
 void fillVector(std::vector<int>& vec);
 
@@ -35,9 +35,9 @@ int main()
 	return 0;
 }
 
-int countCouples(const std::vector<int>& a, const std::vector<int>& b, int n)
+long long countCouples(const std::vector<int>& a, const std::vector<int>& b, int n)
 {
-	int count = 0;
+	long long count = 0;
 	auto c = subtractVectors(a, b);
 
 	heapSort(c);
@@ -46,7 +46,7 @@ int countCouples(const std::vector<int>& a, const std::vector<int>& b, int n)
 	{
 		if (c.at(i) > 0)
 		{
-			count += n - 1 - i;
+			count += static_cast<long long>(n - 1 - i);
 		}
 		else
 		{
@@ -54,7 +54,7 @@ int countCouples(const std::vector<int>& a, const std::vector<int>& b, int n)
 
 			if (index != -1)
 			{
-				count += n - index;
+				count += static_cast<long long>(n - index);
 			}
 		}
 	}
