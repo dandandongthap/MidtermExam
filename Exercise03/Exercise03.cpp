@@ -122,7 +122,7 @@ void BST::printPreorder(Node* root)
 {
 	if (!root) return;
 
-	std::cout << root->key << "\t";
+	std::cout << root->key << " ";
 	printPreorder(root->left);
 	printPreorder(root->right);
 }
@@ -132,7 +132,7 @@ void BST::printInorder(Node* root)
 	if (!root) return;
 
 	printInorder(root->left);
-	std::cout << root->key << "\t";
+	std::cout << root->key << " ";
 	printInorder(root->right);
 }
 
